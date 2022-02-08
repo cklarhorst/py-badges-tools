@@ -22,9 +22,8 @@ def main():
             cov_rate = float(cov['coverage']['@line-rate'])
             cov_rate = round(cov_rate*100)
             
-            badge = anybadge.Badge(label='coverage', value=cov_rate, value_suffix='%', thresholds=thresholds_cov)
+            badge = anybadge.Badge(label='pytest cov', value=cov_rate, value_suffix='%', thresholds=thresholds_cov)
             badge.write_badge('coverage.svg', overwrite=args.override_output_file)
-            
         except:
             traceback.print_exc()
     
